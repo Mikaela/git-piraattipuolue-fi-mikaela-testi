@@ -1,6 +1,9 @@
-\documentclass[a4paper]{artikel3}
-\usepackage[finnish]{babel}
+\documentclass[a4paper,colorlinks,linkcolor=blue]{artikel3}
+\usepackage[english,finnish]{babel}
+\usepackage{hyperref}
 \begin{document}
+\hypersetup{urlcolor=blue}
+
 \section*{Testirepo For\^gejon ominaisuuksille}
 
 For\^gejo on Gitea-forkki, joten tällä sivustolla puhutaan välillä Giteasta kun tarkoitetaan For\^gejoa.
@@ -19,5 +22,63 @@ Vastaus vaikuttaa olevan kyllä!
 
 Miten hattu toisinpäin tehdään?
 Mia\u{u}.
+
+\selectlanguage{english}
+
+\section*{Briefly in English}
+
+This repository is for testing For\^gejo features, mainly \LaTeX\ rendering.
+And to that end I have played a lot with ChatGPT so I have fun documents to maybe take inspiration from in the future.
+
+\subsection*{How do you render \LaTeX in For\^gejo?}
+
+You will need to edit app.ini (note the path of basic.html):
+
+\begin{verbatim}
+[markup.latex]
+ENABLED         = true
+FILE_EXTENSIONS = .tex,.latex
+# docs maybe suggest adding --katex, but is anyone doing math? https://docs.gitea.io/en-us/external-renderers/
+RENDER_COMMAND  = "timeout 30s pandoc -f latex -t html --self-contained --template /etc/gitea/basic.html"
+\end{verbatim}
+
+And basic.html
+
+\begin{verbatim}
+
+
+$for(include-before)$
+$include-before$
+$endfor$
+$if(title)$
+$title$
+$if(subtitle)$
+$subtitle$
+$endif$
+$for(author)$
+$author$
+$endfor$
+$if(date)$
+$date$
+$endif$
+$endif$
+$if(toc)$
+$idprefix$TOC
+$if(toc-title)$
+$toc-title$
+$endif$
+$table-of-contents$
+$endif$
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+\end{verbatim}
+
+This is addjusted from \texttt{pandoc -D html} (mainly stripping HTML and HEAD), by improving it, it could likely look even better.
+
+Could this be better?
+I would like to give For\^gejo command to render as pdf, see
+\href{https://github.com/go-gitea/gitea/issues/17635}{Gitea\#17635: External renderers to PDF}.
 
 \end{document}
