@@ -1,3 +1,4 @@
 [submodule "StreetComplete"]
 	path = StreetComplete
 	url = https://git.nordgedanken.dev/mtrnord/StreetComplete.git
+	branch = main
