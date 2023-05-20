@@ -1,3 +1,5 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.ci for more information
 ci:
   # Forĝejo/Gitea mirrors will autoclose pull requests. This should decrease
   # the frequency of unnecessary PRs.
@@ -11,6 +13,7 @@ repos:
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
+      - id: check-yaml
       - id: check-executables-have-shebangs
       - id: check-shebang-scripts-are-executable
       - id: destroyed-symlinks
