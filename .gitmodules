@@ -1,4 +1,4 @@
-[submodule "StreetComplete"]
-	path = StreetComplete
-	url = https://git.nordgedanken.dev/mtrnord/StreetComplete.git
-	branch = main
+#[submodule "StreetComplete"]
+#	path = StreetComplete
+#	url = https://git.nordgedanken.dev/mtrnord/StreetComplete.git
+#	branch = main

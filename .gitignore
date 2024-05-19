@@ -303,3 +303,6 @@ TSWLatexianTemp*
 
 # pre-commit or prettier or something
 node_modules
+
+# Commented submodule
+StreetComplete
