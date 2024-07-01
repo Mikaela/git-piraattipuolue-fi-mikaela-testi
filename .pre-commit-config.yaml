@@ -26,7 +26,7 @@ repos:
       - id: trailing-whitespace
         exclude_types: [tsv, markdown]
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: "v3.2.5"
+    rev: "v3.3.2"
     hooks:
       - id: prettier
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
