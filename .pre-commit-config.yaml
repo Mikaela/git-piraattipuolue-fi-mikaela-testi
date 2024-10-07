@@ -12,7 +12,7 @@ default_language_version:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -26,11 +26,11 @@ repos:
       - id: trailing-whitespace
         exclude_types: [tsv, markdown]
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: "v3.2.5"
+    rev: "v3.3.3"
     hooks:
       - id: prettier
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: "2.7.3"
+    rev: "3.0.3"
     hooks:
       - id: editorconfig-checker
         alias: ec
